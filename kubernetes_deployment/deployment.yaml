@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-app
+  labels:
+    app: frontend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-app
+  template:
+    metadata:
+      labels:
+        app: frontend-app
+    spec:
+      containers:
+      - name: udagram-frontend
+        image: modernbabbage/udagram-frontend
+        ports:
+        - containerPort: 80
+        env:
+        - name: POSTGRESS_USERNAME
+          value: "udagramdb"
+        - name: POSTGRESS_PASSWORD
+          value: "udagramdb"
+        - name: POSTGRESS_DATABASE
+          value: "postgress"
+        - name: POSTGRESS_HOST
+          value: "udagramdb.cn6nvxbahyln.us-east-2.rds.amazonaws.com"
+        - name: AWS_REGION
+          value: "us-east-2"
+        - name: AWS_PROFILE
+          value: "default"
+        - name: AWS_MEDIA_BUCKET
+          value: "arnz3-udagram"
+        - name: JWT_SECRET
+          value: "FJAEKFJLKSJEAKEKAJFFAIQOE"
