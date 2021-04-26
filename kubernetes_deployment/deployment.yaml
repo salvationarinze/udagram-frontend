@@ -25,7 +25,7 @@ spec:
         - name: POSTGRESS_PASSWORD
           value: "udagramdb"
         - name: POSTGRESS_DATABASE
-          value: "postgress"
+          value: "postgres"
         - name: POSTGRESS_HOST
           value: "udagramdb.cn6nvxbahyln.us-east-2.rds.amazonaws.com"
         - name: AWS_REGION
