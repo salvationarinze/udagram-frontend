@@ -9,6 +9,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies in Docker
+RUN npm install -g ionic
 RUN npm install
 
 # Copy app from local environment into the Docker image
@@ -18,4 +19,5 @@ COPY . .
 EXPOSE 8080
 
 # Define Docker’s behavior when the image is run
+
 CMD ["ionic", "serve"]
