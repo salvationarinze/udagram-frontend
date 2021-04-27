@@ -17,6 +17,7 @@ spec:
       containers:
       - name: udagram-frontend
         image: modernbabbage/udagram-frontend
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         env:
@@ -36,3 +37,4 @@ spec:
           value: "arnz3-udagram"
         - name: JWT_SECRET
           value: "FJAEKFJLKSJEAKEKAJFFAIQOE"
+      restartPolicy: Always
